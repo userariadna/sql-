@@ -49,7 +49,7 @@ FROM trips
 LEFT JOIN riders
   ON trips.rider_id = riders.id;
 
-/*5.Suppose we want to create a link between the trips and the cars used during those trips.
+/*5.Create a link between the trips and the cars used during those trips.
 Find the columns to join on and combine the trips and cars table using an INNER JOIN
 */
 
@@ -57,14 +57,14 @@ SELECT *
 FROM trips
 JOIN cars 
   ON trips.car_id = cars.id;
-/*6.The new riders data are in! There are three new users this month. Stack the riders table on top of the new table named riders2*/
+/*6.Stack the riders table on top of the new table named riders2*/
 SELECT *
 FROM riders 
 UNION
 SELECT * 
 FROM riders2;
 
-/*7.What is the avg cost for a trip*/
+/*7.Avg cost for a trip*/
 SELECT ROUND(AVG(cost),2)
 FROM trips;
 
@@ -86,7 +86,7 @@ SELECT COUNT(*)
 FROM cars
 WHERE status = 'active';
 
-/*It's safety recall time for cars that have been on the road for a while.
+/*
 Write a query that finds two cars that have the highest trips_completed*/
 
 SELECT *
